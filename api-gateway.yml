@@ -4,3 +4,31 @@ server:
 spring:
   application:
     name: api-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+      routes:
+        - id: clientes-mesas
+          uri: lb://ms-clientes-mesas
+          predicates:
+            - Path=/clientes/**
+
+        - id: menu-inventario
+          uri: lb://ms-menu-inventario
+          predicates:
+            - Path=/menu/**
+
+        - id: pedidos-facturacion
+          uri: lb://ms-pedidos-facturacion
+          predicates:
+            - Path=/pedidos/**
+
+        - id: usuarios-bitacora
+          uri: lb://ms-usuarios-bitacora
+          predicates:
+            - Path=/usuarios/**
