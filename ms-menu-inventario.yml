@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ms-menu-inventario
+server:
+  port: 0

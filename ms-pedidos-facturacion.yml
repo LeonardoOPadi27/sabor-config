@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ms-pedidos-facturacion
+server:
+  port: 0
